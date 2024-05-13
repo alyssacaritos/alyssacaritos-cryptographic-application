@@ -5,8 +5,6 @@ from pages import BlockCipher_XOR, Hashing_function, XOR_Cipher, Caesar_Cipher, 
 
 LOGGER = get_logger(__name__)
 
-st.set_page_config(page_title="Applied Cryptography", page_icon="♨️")
-
 # Function to execute content of .py files
 def execute_py_file(file_path):
     spec = importlib.util.spec_from_file_location("module", file_path)
@@ -30,7 +28,7 @@ page_names = [name for function, name, _ in file_functions.values() if function 
 
 # Display the introduction text and a checkbox for viewing text only
 st.title(" ♨️ Applied Cryptography ")
-show_text_only = st.checkbox("Show Introduction Text")
+show_text_only = st.checkbox("View Text Only")
 
 if show_text_only:
     st.write("""
@@ -55,7 +53,7 @@ if show_text_only:
         """)
 else:
     # Display buttons for each .py file in the main content area
-    selected_page = st.selectbox("Select a Page", page_names, label="Choose a cryptographic technique")
+    selected_page = st.selectbox("Select a Page", page_names)
 
     # Show content of the selected page
     if selected_page:
