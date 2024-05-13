@@ -30,7 +30,7 @@ page_names = [name for function, name, _ in file_functions.values() if function 
 
 # Display the introduction text and a checkbox for viewing text only
 st.title(" ♨️ Applied Cryptography ")
-show_text_only = st.checkbox("View Text Only")
+show_text_only = st.checkbox("Show Introduction Text")
 
 if show_text_only:
     st.write("""
@@ -55,7 +55,7 @@ if show_text_only:
         """)
 else:
     # Display buttons for each .py file in the main content area
-    selected_page = st.selectbox("Select a Page", page_names)
+    selected_page = st.selectbox("Select a Page", page_names, label="Choose a cryptographic technique")
 
     # Show content of the selected page
     if selected_page:
